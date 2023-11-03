@@ -57,7 +57,7 @@ class BasicNgram(ConditionalProbDist):
     returns an iterable over the ngrams of the word corpus
     """
     def generate_ngrams(self):
-        return ngrams(self._words, self._n, self._pad_left, self._pad_right,
+        return ngrams(self._words, self._n, pad_left=self._pad_left, pad_right=self._pad_right,
                       left_pad_symbol=self._start_symbol,
                       right_pad_symbol=self._end_symbol)
 
