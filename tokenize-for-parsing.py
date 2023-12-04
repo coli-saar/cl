@@ -111,4 +111,4 @@ def tokenize_and_align_labels(examples, skip_index=-100):
     tokenized_inputs["num_words"] = num_words
     tokenized_inputs["tokenid_to_wordid"] = [tokenized_inputs.word_ids(batch_index=i) for i in range(len(examples_heads))] # map token ID to word ID
 
-    return tokenized_inputs # {input_ids, attention_mask, head, deprel_ids} - all list(list(int))
+    return tokenized_inputs
