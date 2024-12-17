@@ -38,8 +38,9 @@ def tokenize_and_align_labels(examples, skip_index=-100):
         examples_deprels.append(dd)
 
     tokenized_inputs = tokenizer(examples_tokens, truncation=True, is_split_into_words=True, padding=True) # get "tokenizer" from global variable
-    # tokenized_inputs is a dictionary with keys input_ids and attention_mask;
+    # tokenized_inputs is a Huggingface BatchEncoding object with keys input_ids and attention_mask;
     # each is a list (per sentence) of lists (per token).
+    # See here for more information about BatchEncodings: https://huggingface.co/docs/transformers/main_classes/tokenizer
 
     remapped_heads = [] # these will be lists (per sentence) of lists (per token)
     deprel_ids = []
